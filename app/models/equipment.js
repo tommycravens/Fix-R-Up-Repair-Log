@@ -11,6 +11,10 @@ const equipmentSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
+    modelYear: {
+      type: Number,
+      required: true,
+    },
     modelNumber: {
       type: String,
       required: true,
