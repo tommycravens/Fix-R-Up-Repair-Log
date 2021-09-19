@@ -14,6 +14,8 @@ const equipmentSchema = new mongoose.Schema(
     modelYear: {
       type: Number,
       required: true,
+      min: [1900, 'Woah! You have done a great job taking care of this!'],
+      max: [2022, 'Oooo Shiny! New equipment means a new maintenance schedule, luckily I am here to help!']
     },
     modelNumber: {
       type: String,
