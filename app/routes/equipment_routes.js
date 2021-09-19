@@ -35,7 +35,7 @@ router.post('/equipments', requireToken, (req, res, next) => {
 	equipment.owner = req.user.id
 
 	// save event to mongodb
-	Equipment.create(vocab)
+	Equipment.create(equipment)
 		// if successful respond with 201 and vocab json
 		.then((equipment) => res.status(201).json({ equipment: equipment.toObject() }))
 		// on error respond with 500 and error message
