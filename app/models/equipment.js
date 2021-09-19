@@ -1,4 +1,4 @@
-const { version } = require('mongoose')
+const { version } = require('mongoose');
 const mongoose = require('mongoose')
 
 const equipmentSchema = new mongoose.Schema(
@@ -36,5 +36,5 @@ const equipmentSchema = new mongoose.Schema(
 	}
 )
 
-//  Notes: and in service dates or photos to add in files and buttons for receipts, insurance, title or whatever else but will need to be listed as an attribute under equipment
+//  Notes: add in service dates or photos to add in files and buttons for receipts, insurance, title or whatever else but will need to be listed as an attribute under equipment
 module.exports = mongoose.model('Equipment', equipmentSchema)
