@@ -15,19 +15,19 @@ const requireOwnership = customErrors.requireOwnership
 const requireToken = passport.authenticate('bearer', { session: false })
 
 // Index: GET /events return all the events
-router.get('/equipments', requireToken, (req, res, next) => {
+router.get('/equipment', requireToken, (req, res, next) => {
 	// fetch all the events from mongodb
 	Equipment.find({ owner: req.user.id })
 		// use mongoose toObject on each event to include virtuals
-		.then((equipments) => equipments.map((equipment) => equipment.toObject()))
+		.then((equipment) => equipment.map((equipment) => equipment.toObject()))
 		// send response 200 with events to client
-		.then((equipments) => res.json({ equipments: equipments }))
+		.then((equipment) => res.json({ equipment: equipment }))
 		// on error run next middleware
 		.catch(next)
 })
 
 // Create: POST /events save the event data
-router.post('/equipments', requireToken, (req, res, next) => {
+router.post('/equipment', requireToken, (req, res, next) => {
 	// get event data from request
 	const equipment = req.body.equipment
 
@@ -43,7 +43,7 @@ router.post('/equipments', requireToken, (req, res, next) => {
 })
 
 // Show: GET /events/100 return a event
-router.get('/equipments/:id', requireToken, (req, res, next) => {
+router.get('/equipment/:id', requireToken, (req, res, next) => {
 	// get id of event from params
 	const id = req.params.id
 	// fetching event by its id
@@ -59,7 +59,7 @@ router.get('/equipments/:id', requireToken, (req, res, next) => {
 })
 
 // Destroy: DELETE /events/:id delete the event
-router.delete('/equipments/:id', requireToken, (req, res, next) => {
+router.delete('/equipment/:id', requireToken, (req, res, next) => {
 	const id = req.params.id
 	Equipment.findById(id)
 		// handle 404 error if no event found
@@ -76,7 +76,7 @@ router.delete('/equipments/:id', requireToken, (req, res, next) => {
 })
 
 // Update: PATCH /events/:id
-router.patch('/equipments/:id', requireToken, (req, res, next) => {
+router.patch('/equipment/:id', requireToken, (req, res, next) => {
 	// get id of event from params
 	const id = req.params.id
 	// get event data from request

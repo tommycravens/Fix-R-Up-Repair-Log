@@ -1,8 +1,7 @@
 const { version } = require('mongoose');
 const mongoose = require('mongoose')
 
-const equipmentSchema = new mongoose.Schema(
-	{
+const equipmentSchema = new mongoose.Schema({
     equipmentType: {
       type: String,
       required: true,

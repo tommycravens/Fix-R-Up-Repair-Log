@@ -1,7 +1,7 @@
 #!/bin/sh
 # 3945fd04ecfa636e0171b5e164e2de35
 API="http://localhost:4741"
-URL_PATH="/equipments"
+URL_PATH="/equipment"
 
 curl "${API}${URL_PATH}" \
   --include \
