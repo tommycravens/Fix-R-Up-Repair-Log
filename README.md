@@ -4,7 +4,7 @@
 <h3>Deployed link:</h3>
 </br>
 <br>
-<h3>Front-end Repo link:</h3>
+<h3>Front-end Repo link: https://github.com/tommycravens/Fix-R-Up-Repair-Log-client</h3>
 </br>
 <br>
 <h3>Screenshot of App:</h3>
